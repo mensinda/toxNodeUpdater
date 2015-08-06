@@ -15,7 +15,6 @@ done
 addToConfig "parserDir"    "$(readlink -f "$ROOTDIR/parsers")"    "Path to the parsers directory"
 addToConfig "generatorDir" "$(readlink -f "$ROOTDIR/generators")" "Path to the generators directory"
 addToConfig "source"       "https://wiki.tox.chat/users/nodes"    "Default Path / Link to the node list"
-addToConfig "output"       "nodes.json"                           "Default output file"
 addToConfig "defParser"    "html1"                                "Default parser for the node list"
 addToConfig "defGenerator" "json"                                 "Default generator"
 addToConfig "tempFile"     "$(readlink -f "$ROOTDIR/source")"     "Where the downloaded files will be stored"

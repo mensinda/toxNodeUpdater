@@ -70,13 +70,17 @@ parseArgs() {
     esac
   done
 
-  msg1 "Info"
-
   [ -z "$GENERATOR_NAME" ] && GENERATOR_NAME="${CONFIG[defGenerator]}"
   [ -z "$PARSER_NAME" ]    && PARSER_NAME="${CONFIG[defParser]}"
   [ -z "$SOURCE" ]         && SOURCE="${CONFIG[source]}"
-  [ -z "$OUTPUT" ]         && OUTPUT="${CONFIG[output]}"
 
+  if [ -z "$OUTPUT" ]; then
+    showHelp
+    error "No output file provided"
+    exit 2
+  fi
+
+  msg1 "Info"
   msg2 "Using generator \x1b[35m$GENERATOR_NAME"
   msg2 "Using parser    \x1b[35m$PARSER_NAME"
   msg2 "Using source    \x1b[33m$SOURCE"
