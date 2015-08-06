@@ -5,7 +5,23 @@ are:
 
  - JSON
 
-The default node list source is https://wiki.tox.chat/users/nodes
+The default node list source is https://wiki.tox.chat/users/nodes, the default parser is html1 and the default file generator is JSON.
+
+## Usage
+
+Main Usage: `./updater.sh [OPTIONS] <output file>`
+
+Options:
+
+|        option        |                  Description                  |
+|----------------------|-----------------------------------------------|
+| -h, --help           | Show a help message and exit                  |
+| -g, --generator  [g] | Use the output file generator [g]             |
+| -p, --parser     [p] | Use the file parser [p] to generate the list  |
+| -s, --source     [s] | Use [s] as the source                         |
+
+
+NOTE: this program uses `wget` to download files.
 
 ## Adding a parser
 
